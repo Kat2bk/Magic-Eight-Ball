@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magic Eight Ball</title>
     <link type="text/css" rel="stylesheet" href="./style.css" />
-    <script type="javascript" src="./main.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
     <div id="content">
-      <h1>Katherine's Magic Insult Ball!</h1>
+      <h1>Katherine's Magic Eight Ball!</h1>
       <p class="question">Think of a question...</p>
       <div class="border">
         <div class="border-ball">
@@ -20,8 +20,47 @@
             </div>
           </div>
         </div>
-        <button id="button">Answer</button>
+        <button type="submit" id="button">Answer</button>
       </div>
     </div>
+    <script>
+      var array = [
+        "It is certain",
+        "Without a doubt!",
+        "As I see it, yes",
+        "Most likely",
+        "All signs point to yes",
+        "Don't count on it",
+        "My answer is no",
+        "Doubtful",
+        "Outlook not good",
+        "Ask again later",
+        "Cannot predict now",
+        "The future is hazy",
+        "Maybe so",
+        "Unsure, try again",
+        "Hahahahaha, really?",
+        "What a stupid question",
+      ];
+
+      window.onload = function (e) {
+        const button = document.getElementById("button");
+        let answer = document.getElementById("answer");
+        let eightText = document.getElementById("design");
+        let ball = document.getElementById("design-ball");
+
+        button.addEventListener("click", function () {
+          eightText.innerText = "";
+          var item = array[Math.floor(Math.random() * array.length)];
+          answer.innerText = item;
+          if (answer.innerText === item) {
+            ball.style.backgroundColor = "grey";
+          }
+        });
+      };
+    </script>
+    <!-- <script type="text/javascript">
+      getAnswer();
+    </script> -->
   </body>
 </html>
