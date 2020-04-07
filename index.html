@@ -53,13 +53,18 @@
           eightText.innerText = "";
           var item = array[Math.floor(Math.random() * array.length)];
           answer.innerText = item;
+          if (answer.style.display === "none") {
+            answer.style.display = "block";
+          }
+
           if (answer.innerText === item) {
             ball.style.backgroundColor = "grey";
             setTimeout(function () {
-              eightText.innerText.display = "";
-            }, 1000);
+              answer.style.display = "none";
+              ball.style.backgroundColor = "white";
+              eightText.innerText = "8";
+            }, 2000);
           }
-          resetStyle();
         });
       };
 
