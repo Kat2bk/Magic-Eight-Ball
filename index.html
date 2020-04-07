@@ -55,9 +55,19 @@
           answer.innerText = item;
           if (answer.innerText === item) {
             ball.style.backgroundColor = "grey";
+            setTimeout(function () {
+              eightText.innerText.display = "";
+            }, 1000);
           }
+          resetStyle();
         });
       };
+
+      // function resetStyle(element) {
+      //   if (ball.style.backgroundColor === "grey") {
+      //     eightText.style.visibility = "visible";
+      //   }
+      // }
     </script>
     <!-- <script type="text/javascript">
       getAnswer();
